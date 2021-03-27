@@ -1,0 +1,3 @@
+include ':VertHorzTableLibrary'
+include ':app'
+rootProject.name = "VertHorzTable"
