@@ -6,8 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.jnet.apollo.ui.table.Row
-import com.jnet.apollo.ui.table.TableRow
 import kotlinx.android.synthetic.main.layout_table_cell_item.view.*
 import java.util.*
 

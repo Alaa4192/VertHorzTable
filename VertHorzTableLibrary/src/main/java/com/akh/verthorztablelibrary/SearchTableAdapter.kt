@@ -12,8 +12,6 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.view.get
 import androidx.core.view.setMargins
 import androidx.recyclerview.widget.RecyclerView
-import com.jnet.apollo.ui.table.Row
-import com.jnet.apollo.ui.table.TableRow
 
 
 class SearchTableAdapter(var adapterListener: AdapterListener? = null) :

@@ -1,4 +1,4 @@
-package com.jnet.apollo.ui.table
+package com.akh.verthorztablelibrary
 
 import java.io.Serializable
 

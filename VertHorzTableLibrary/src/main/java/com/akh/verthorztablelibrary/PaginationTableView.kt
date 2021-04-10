@@ -11,7 +11,6 @@ import android.widget.LinearLayout
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.view.setPadding
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.jnet.apollo.ui.table.Table
 import kotlinx.android.synthetic.main.layout_pagination_table.view.*
 
 class PaginationTableView(
@@ -103,6 +102,27 @@ class PaginationTableView(
         }
 
         firstColumnTextView.text = headers.first()?.let { context.getString(it) } ?: run { "" }
+    }
+
+
+    @JvmName("loadHeaders1")
+    fun loadHeaders(headers: ArrayList<String?>) {
+        headersContainer.removeAllViews()
+
+        headers.subList(1, headers.size).forEach {
+            headersContainer.addView(AppCompatTextView(context).apply {
+                layoutParams = LayoutParams(300, LayoutParams.MATCH_PARENT).apply {
+                    setPadding(8)
+                }
+                text = it ?: ""
+                gravity = Gravity.CENTER_VERTICAL
+                textAlignment = View.TEXT_ALIGNMENT_VIEW_START
+                typeface = Typeface.DEFAULT_BOLD
+                textSize = 12f
+            })
+        }
+
+        firstColumnTextView.text = headers.first() ?: ""
     }
 
     fun loadTable(table: Table) {
