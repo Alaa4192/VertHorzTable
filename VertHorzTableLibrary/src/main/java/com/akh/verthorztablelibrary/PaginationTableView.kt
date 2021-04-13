@@ -6,7 +6,6 @@ import android.graphics.Typeface
 import android.util.AttributeSet
 import android.util.Log
 import android.view.*
-import android.widget.HorizontalScrollView
 import android.widget.LinearLayout
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.view.setPadding
@@ -80,9 +79,9 @@ class PaginationTableView(
         }
 
 
-        horizontalView.postDelayed({
-            horizontalView.fullScroll(HorizontalScrollView.FOCUS_RIGHT)
-        }, 10)
+//        horizontalView.postDelayed({
+//            horizontalView.fullScroll(HorizontalScrollView.FOCUS_RIGHT)
+//        }, 10)
     }
 
     fun loadHeaders(headers: ArrayList<Int?>) {
