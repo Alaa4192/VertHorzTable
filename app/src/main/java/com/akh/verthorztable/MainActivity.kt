@@ -17,13 +17,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadTable() {
-        val headers: ArrayList<String?> = arrayListOf("A", "B", "C", "D", "E", "F")
+        val headers: ArrayList<String?> =
+            arrayListOf("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K")
         table.loadHeaders(headers)
 
         val size = headers.size
 
         val rows = arrayListOf<Row>()
-        for (rowIndex in 1..10) {
+        for (rowIndex in 1..30) {
             val cells = arrayListOf<TableCell>()
 
             for (cellIndex in 1 until size) {

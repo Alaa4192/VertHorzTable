@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
-import android.util.Log
 import android.view.*
 import android.widget.LinearLayout
 import androidx.appcompat.widget.AppCompatTextView
@@ -62,21 +61,21 @@ class PaginationTableView(
         val detector =
             GestureDetector(context, MyGestureListener(object : MyGestureListener.Listener {
                 override fun onScroll(distanceX: Float, distanceY: Float) {
-//                recyclerView.scrollBy(0, distanceY.toInt())
-//                firstColumnRecyclerView.scrollBy(0, distanceY.toInt())
-//                horizontalView.scrollBy(distanceX.toInt(), 0)
+                    recyclerView.scrollBy(0, distanceY.toInt())
+                    firstColumnRecyclerView.scrollBy(0, distanceY.toInt())
+                    horizontalView.scrollBy(distanceX.toInt(), 0)
                 }
             }))
 
         focusView.setOnTouchListener { v, event ->
-            Log.d("koko", "setOnTouchListener: focusView")
+            // Log.d("koko", "setOnTouchListener: focusView")
             detector.onTouchEvent(event)
         }
 
-        recyclerView.setOnTouchListener { v, event ->
-            Log.d("koko", "setOnTouchListener: recyclerView")
-            false
-        }
+//        recyclerView.setOnTouchListener { v, event ->
+//            // Log.d("koko", "setOnTouchListener: recyclerView")
+//            false
+//        }
 
 
 //        horizontalView.postDelayed({
