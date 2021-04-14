@@ -1,6 +1,7 @@
 package com.akh.verthorztable
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.akh.verthorztablelibrary.Row
 import com.akh.verthorztablelibrary.Table
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
             val row = TableRow(
                 id = rowIndex,
-                cell = TableCell(id = 0, value = "0"),
+                cell = TableCell(id = 0, value = "0", isClickable = true),
                 cells = cells
             )
 
@@ -52,6 +53,15 @@ class MainActivity : AppCompatActivity() {
                 offset = 0,
                 total = rows.size
             )
+        )
+
+        table.setTableListeners(
+            onItemClick = { i ->
+                Log.d("koko", "onItemClick: $i")
+            },
+            onCellClick = { i, j ->
+                Log.d("koko", "onCellClick: $i $j")
+            }
         )
     }
 }

@@ -134,7 +134,7 @@ class PaginationTableView(
         currentTextView.text = table.rows.size.toString()
     }
 
-    fun onPageScroll(
+    fun setTableListeners(
         onPage: ((Int) -> Unit)? = null,
         onItemClick: ((Int) -> Unit)? = null,
         onCellClick: ((Int, Int) -> Unit)? = null

@@ -2,6 +2,7 @@ package com.akh.verthorztablelibrary
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
 import androidx.recyclerview.widget.RecyclerView
@@ -14,20 +15,39 @@ class MyRecyclerView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) 
 
     private val detector by lazy { GestureDetector(context, MyGestureListener()) }
 
-    override fun dispatchTouchEvent(e: MotionEvent?): Boolean {
-//        return super.dispatchTouchEvent(ev)
+//    override fun dispatchTouchEvent(e: MotionEvent?): Boolean {
+////        return super.dispatchTouchEvent(ev)
+//        super.dispatchTouchEvent(e)
+//
+//        val onTouchEvent = detector.onTouchEvent(e)
+//        Log.d("MyRecyclerView", "dispatchTouchEvent: $onTouchEvent")
+//        return onTouchEvent // true
+//
+//    }
 
-        return detector.onTouchEvent(e) // true
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        val dispatchTouchEvent = super.dispatchTouchEvent(ev)
+
+        Log.d("MyRecyclerView", "dispatchTouchEvent: $dispatchTouchEvent")
+        return dispatchTouchEvent
     }
+
 
     override fun onInterceptTouchEvent(e: MotionEvent?): Boolean {
 //        return super.onInterceptTouchEvent(e)
 
-        return detector.onTouchEvent(e) // true
+        val onTouchEvent = detector.onTouchEvent(e)
+        Log.d("MyRecyclerView", "onInterceptTouchEvent: $onTouchEvent")
+        return onTouchEvent // true
+
     }
 
     override fun onTouchEvent(e: MotionEvent?): Boolean {
-        return super.onTouchEvent(e)
+//        return super.onTouchEvent(e)
+
+        val onTouchEvent = detector.onTouchEvent(e)
+        Log.d("MyRecyclerView", "onTouchEvent: $onTouchEvent")
+        return onTouchEvent // true
     }
 
 

@@ -27,15 +27,15 @@ class MyHorizontalScrollView(
     private val detector by lazy { GestureDetector(context, MyGestureListener()) }
 
     override fun dispatchTouchEvent(e: MotionEvent?): Boolean {
-//        return super.dispatchTouchEvent(ev)
+        return super.dispatchTouchEvent(e)
 
-        return detector.onTouchEvent(e) // true
+//        return detector.onTouchEvent(e) // true
     }
 
     override fun onInterceptTouchEvent(e: MotionEvent?): Boolean {
-//        return super.onInterceptTouchEvent(ev)
+        return super.onInterceptTouchEvent(e)
 
-        return detector.onTouchEvent(e) // true
+//        return detector.onTouchEvent(e) // true
     }
 
     class MyGestureListener : GestureDetector.SimpleOnGestureListener() {
