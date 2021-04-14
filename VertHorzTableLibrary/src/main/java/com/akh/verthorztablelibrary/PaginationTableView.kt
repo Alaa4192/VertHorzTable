@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.*
 import android.widget.LinearLayout
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.core.view.setMargins
 import androidx.core.view.setPadding
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.layout_pagination_table.view.*
@@ -118,7 +119,7 @@ class PaginationTableView(
         headers.subList(1, headers.size).forEach {
             headersContainer.addView(AppCompatTextView(context).apply {
                 layoutParams = LayoutParams(300, LayoutParams.MATCH_PARENT).apply {
-                    setPadding(8)
+                    setMargins(8)
                 }
                 text = it ?: ""
                 gravity = Gravity.CENTER_VERTICAL
