@@ -38,16 +38,4 @@ class MyHorizontalScrollView(
 //        return detector.onTouchEvent(e) // true
     }
 
-    class MyGestureListener : GestureDetector.SimpleOnGestureListener() {
-        override fun onScroll(
-            e1: MotionEvent?, e2: MotionEvent?, distanceX: Float, distanceY: Float
-        ): Boolean {
-            return true
-        }
-
-        override fun onSingleTapUp(e: MotionEvent?): Boolean {
-            return false
-        }
-
-    }
 }

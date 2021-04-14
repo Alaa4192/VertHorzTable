@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
+import android.util.Log
 import android.view.*
 import android.widget.LinearLayout
 import androidx.appcompat.widget.AppCompatTextView
@@ -67,10 +68,10 @@ class PaginationTableView(
                 }
             }))
 
-        focusView.setOnTouchListener { v, event ->
-            // Log.d("koko", "setOnTouchListener: focusView")
-            detector.onTouchEvent(event)
-        }
+//        focusView.setOnTouchListener { v, event ->
+//            // Log.d("koko", "setOnTouchListener: focusView")
+//            detector.onTouchEvent(event)
+//        }
 
 //        recyclerView.setOnTouchListener { v, event ->
 //            // Log.d("koko", "setOnTouchListener: recyclerView")
@@ -81,6 +82,13 @@ class PaginationTableView(
 //        horizontalView.postDelayed({
 //            horizontalView.fullScroll(HorizontalScrollView.FOCUS_RIGHT)
 //        }, 10)
+
+
+        myFrameLayout.setOnTouchListener { _, event ->
+            Log.d("koko", "setOnTouchListener: myFrameLayout")
+            detector.onTouchEvent(event)
+        }
+
     }
 
     fun loadHeaders(headers: ArrayList<Int?>) {
